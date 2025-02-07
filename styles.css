@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #87bbf3; /* Light blue background */
+  color: #333;
+  text-align: center;
+  padding: 50px;
+}
+
+.countdown-container {
+  background: #816eeb9f;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding: 20px 40px;
+}
+
+#timer {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+#timer span {
+  font-weight: bold;
+  margin: 0 10px;
+  color: #f330e3c4;
+}
+
+#image-container {
+  margin: 20px 0;
+}
+
+#static-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
