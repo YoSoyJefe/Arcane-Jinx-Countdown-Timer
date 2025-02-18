@@ -1,5 +1,5 @@
 // Set the target date
-const targetDate = new Date("2025-12-31T23:59:59").getTime();
+const targetDate = new Date("2025-12-31T00:00:00").getTime();
 
 // Update the timer every second
 const countdown = setInterval(() => {
@@ -21,25 +21,7 @@ const countdown = setInterval(() => {
   // If the countdown is over, display a message
   if (timeLeft < 0) {
     clearInterval(countdown);
-    document.getElementById("timer").innerHTML = "Countdown Completed!";
+    document.getElementById("timer").innerHTML = "The figure is on the way!";
   }
 }, 1000);
 
-// Handle image upload
-const imageUpload = document.getElementById("image-upload");
-const uploadedImage = document.getElementById("uploaded-image");
-
-imageUpload.addEventListener("change", (event) => {
-  const file = event.target.files[0];
-
-  if (file) {
-    const reader = new FileReader();
-
-    reader.onload = (e) => {
-      uploadedImage.src = e.target.result;
-      uploadedImage.style.display = "block";
-    };
-
-    reader.readAsDataURL(file);
-  }
-});
