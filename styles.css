@@ -1,11 +1,96 @@
 body {
-  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg,#2194ca,#ff00c8);
+  background-size: 200% 200%;
+  animation: gradient-shift 5s infinite;
+  font-family: Georgia, serif;
   background-color: #87bbf3; /* Light blue background */
-  color: #333;
+  color: #3a3939;
   text-align: center;
   padding: 50px;
+  
 }
 
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.balloon-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Ensures they don't interfere with clicks */
+}
+
+.balloon {
+  position: absolute;
+  bottom: -100px; /* Start off-screen */
+  width: 50px;
+  height: 70px;
+  background-color: red;
+  border-radius: 50%;
+  animation: float 5s linear infinite;
+  opacity: 0.8;
+}
+
+/* Create the string using ::before */
+.balloon::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, gray, transparent);
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: wave 1s infinite alternate ease-in-out;
+}
+
+@keyframes wave {
+  0% {
+      transform: translateX(-50%) rotate(5deg);
+  }
+  100% {
+      transform: translateX(-50%) rotate(-5deg);
+  }
+}
+@keyframes float {
+  0% {
+      transform: translateY(0);
+      opacity: 0.8;
+  }
+  100% {
+      transform: translateY(-110vh); /* Moves balloon up */
+      opacity: 0;
+  }
+}
+
+/* Different balloon colors */
+.balloon:nth-child(2) { background-color: blue; animation-duration: 6s; }
+.balloon:nth-child(3) { background-color: yellow; animation-duration: 7s; }
+.balloon:nth-child(4) { background-color: green; animation-duration: 5.5s; }
+.balloon:nth-child(5) { background-color: purple; animation-duration: 6.5s; }
+
+h1{
+  font-family: Georgia, serif;
+  color: #021446;
+}
+#content1{
+  font-size: 1rem;
+}
+#content2{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 .countdown-container {
   background: #816eeb9f;
   border-radius: 12px;
@@ -22,7 +107,7 @@ body {
 #timer span {
   font-weight: bold;
   margin: 0 10px;
-  color: #f330e3c4;
+  color: #4800f1c4;
 }
 
 #image-container {
@@ -30,7 +115,7 @@ body {
 }
 
 #static-image {
-  max-width: 100%;
+  max-width: 69%;
   height: auto;
   border-radius: 10px;
 }
